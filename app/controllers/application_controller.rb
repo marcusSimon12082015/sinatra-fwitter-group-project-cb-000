@@ -46,6 +46,7 @@ class ApplicationController < Sinatra::Base
       @user = User.find(session[:id])
       @tweet = Tweet.create(content: params[:content])
       @user.tweets << @tweet
+      binding.pry
     end
   end
 

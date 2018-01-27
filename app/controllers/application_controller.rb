@@ -15,7 +15,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/users/:user_slug' do
-    binding.pry
+    #binding.pry
     @user = User.find_by_slug(params[:user_slug])
     erb :'/users/show'
   end

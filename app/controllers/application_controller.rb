@@ -41,6 +41,10 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  post '/tweets' do
+    binding.pry
+  end
+
 #Tweets operations END#
 
 #Signup operations#

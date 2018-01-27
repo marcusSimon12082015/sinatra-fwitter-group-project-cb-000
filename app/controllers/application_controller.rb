@@ -20,6 +20,7 @@ class ApplicationController < Sinatra::Base
     erb :'/users/show'
   end
 
+#Tweets operations#
   get '/tweets' do
     begin
         @user = User.find(session[:id])
@@ -38,6 +39,9 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+#Tweets operations END#
+
+#Signup operations#
   get '/signup' do
     if Helpers.is_logged_in?(session)
       redirect to '/tweets'
@@ -62,6 +66,10 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+#Signup operations END#
+
+#Login/Logout operations#
+
   get '/login' do
     if Helpers.is_logged_in?(session)
       redirect to '/tweets'
@@ -82,5 +90,7 @@ class ApplicationController < Sinatra::Base
     session.clear
     redirect to '/login'
   end
+
+#Login/Logout operations END#
 
 end

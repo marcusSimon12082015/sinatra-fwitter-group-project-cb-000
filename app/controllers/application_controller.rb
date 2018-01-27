@@ -77,6 +77,13 @@ class ApplicationController < Sinatra::Base
 
   post '/tweets/:id' do
     binding.pry
+    if !Helpers.checkIfParamsEmpty?(session)
+      @tweet = Tweet.find(params[:id])
+      @tweet.update(content: params[:content])
+    else 
+      flash[:message] = "All fields are required!!!"
+      redirect to '/tweets/#{@tweet.id/edit}'
+    end 
   end
 #Tweets operations END#
 

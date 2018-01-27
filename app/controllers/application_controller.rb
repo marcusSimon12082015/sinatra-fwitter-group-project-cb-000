@@ -53,6 +53,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/tweets/:id' do
+    binding.pry
     erb :'/tweets/show_tweet'
   end
 #Tweets operations END#

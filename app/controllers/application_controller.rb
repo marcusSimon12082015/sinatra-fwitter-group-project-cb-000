@@ -13,12 +13,14 @@ class ApplicationController < Sinatra::Base
   get '/' do
     erb :index
   end
+#USER Operations#
 
   get '/users/:user_slug' do
     #binding.pry
     @user = User.find_by_slug(params[:user_slug])
     erb :'/users/show'
   end
+#USER Opeartions END#
 
 #Tweets operations#
   get '/tweets' do

@@ -15,15 +15,12 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/tweets' do
-    binding.pry
-    if session.key?(:id)
-      #we look for a user with and id only if the key exists in the session hash
-      @user = User.find(session[:id])
-      if @user.nil?
-        redirect to '/login'
-      else
+    begin 
+        @user = User.find(session[:id])
         erb :'/tweets/tweets'
-      end
+    rescue ActiveRecord::RecordNotFound
+        binding.pry
+        redirect to '/login'
     end
   end
 

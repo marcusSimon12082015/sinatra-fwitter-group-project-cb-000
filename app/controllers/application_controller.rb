@@ -52,9 +52,9 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-  get '/tweets/:id' do 
+  get '/tweets/:id' do
     
-  end 
+  end
 #Tweets operations END#
 
 #Signup operations#

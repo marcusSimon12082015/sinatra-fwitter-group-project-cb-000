@@ -19,7 +19,7 @@ class ApplicationController < Sinatra::Base
         @user = User.find(session[:id])
         erb :'/tweets/tweets'
     rescue ActiveRecord::RecordNotFound
-        binding.pry
+        #binding.pry
         redirect to '/login'
     end
   end

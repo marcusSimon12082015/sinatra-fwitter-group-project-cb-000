@@ -77,7 +77,7 @@ class ApplicationController < Sinatra::Base
 
   post '/tweets/:id' do
     if !params[:content].empty?
-      #binding.pry
+      binding.pry
       @tweet = Tweet.find(params[:id])
       @tweet.update(content: params[:content])
     else

@@ -62,8 +62,10 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/tweets/:id/edit' do
-    binding.pry
     @tweet = Tweet.find(params[:id])
+    if Helpers.is_logged_in?(session)
+
+    end 
   end
 
   post '/tweets/:id/delete' do

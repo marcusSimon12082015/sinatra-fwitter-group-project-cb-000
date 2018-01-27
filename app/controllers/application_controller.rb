@@ -16,7 +16,7 @@ class ApplicationController < Sinatra::Base
 
   get '/tweets' do
     binding.pry
-    if session.key?(:id) && !session[:id].empty?
+    if session.key?(:id)
       #we look for a user with and id only if the key exists in the session hash
       @user = User.find(session[:id])
       if @user.nil?

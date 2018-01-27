@@ -15,7 +15,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/tweets' do
-    begin 
+    begin
         @user = User.find(session[:id])
         erb :'/tweets/tweets'
     rescue ActiveRecord::RecordNotFound

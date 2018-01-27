@@ -16,7 +16,6 @@ class ApplicationController < Sinatra::Base
 
   get '/tweets' do
     @user = User.find(session[:id])
-    binding.pry
     erb :'/tweets/tweets'
   end
 

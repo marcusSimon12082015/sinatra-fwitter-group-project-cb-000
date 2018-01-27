@@ -58,4 +58,13 @@ class ApplicationController < Sinatra::Base
       redirect to '/tweets'
     end
   end
+
+  get '/logout' do
+
+  end
+
+  post '/logout' do
+
+  end
+
 end

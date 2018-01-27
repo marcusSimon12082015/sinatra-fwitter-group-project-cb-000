@@ -63,8 +63,8 @@ class ApplicationController < Sinatra::Base
 
   get '/tweets/:id/edit' do
     @tweet = Tweet.find(params[:id])
-    binding.pry
     if Helpers.current_user(session).tweets.include?(@tweet)
+        binding.pry
         erb :'/tweets/edit_tweet'
     else
         redirect to '/tweets'

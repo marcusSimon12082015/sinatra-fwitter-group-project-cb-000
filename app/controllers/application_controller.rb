@@ -15,8 +15,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/tweets' do
-    @user = User.find(session[:id])
-    erb :'/tweets/tweets'
+     if @user = User.find(session[:id])
+       erb :'/tweets/tweets'
+     else 
+       redirect to '/login'
+     end
   end
 
   get '/signup' do

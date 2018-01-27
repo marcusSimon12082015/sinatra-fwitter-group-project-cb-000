@@ -31,7 +31,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/tweets/new' do
-
+    if Helpers.is_logged_in?(session)
+      erb :'/tweets/create_tweet'
+    else 
+      redirect to 'login'
+    end 
   end
 
   get '/signup' do

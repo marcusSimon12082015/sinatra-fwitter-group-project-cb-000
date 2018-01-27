@@ -34,7 +34,6 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/tweets/new' do
-    binding.pry
     if Helpers.is_logged_in?(session)
       erb :'/tweets/create_tweet'
     else

@@ -82,7 +82,7 @@ class ApplicationController < Sinatra::Base
       @tweet.update(content: params[:content])
     else
       flash[:message] = "All fields are required!!!"
-      redirect to '/tweets/#{params[:id]}/edit}'
+      redirect to "/tweets/#{params[:id]}/edit}"
     end
   end
 #Tweets operations END#

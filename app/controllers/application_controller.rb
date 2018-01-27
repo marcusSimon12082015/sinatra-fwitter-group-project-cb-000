@@ -62,16 +62,16 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/tweets/:id/edit' do
-    
+
   end
 
   post '/tweets/:id/delete' do
 
   end
 
-  post '/tweets/:id' do 
+  post '/tweets/:id' do
 
-  end 
+  end
 #Tweets operations END#
 
 #Signup operations#

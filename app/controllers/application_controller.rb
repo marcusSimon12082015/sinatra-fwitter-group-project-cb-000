@@ -42,7 +42,8 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/tweets' do
-    binding.pry
+    @user = User.find(session[:id])
+    @tweet = 
   end
 
 #Tweets operations END#
@@ -57,7 +58,7 @@ class ApplicationController < Sinatra::Base
 
   post '/signup' do
 
-    if !Helpers.checkIfParamsEmpty?(params) &&
+    if !Helpers.checkIfParamsEmpty?(params)
       @user = User.new(username: params[:username],
               email: params[:email],
               password: params[:password])

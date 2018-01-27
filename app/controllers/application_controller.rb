@@ -14,6 +14,10 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
+  get '/users/:user_slug' do
+
+  end
+
   get '/tweets' do
     begin
         @user = User.find(session[:id])

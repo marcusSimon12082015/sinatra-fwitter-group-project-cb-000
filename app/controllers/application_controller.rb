@@ -62,7 +62,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/tweets/:id/edit' do
-
+    binding.pry
+    @tweet = Tweet.find(params[:id])
   end
 
   post '/tweets/:id/delete' do

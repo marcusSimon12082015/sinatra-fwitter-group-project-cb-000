@@ -46,7 +46,7 @@ class ApplicationController < Sinatra::Base
       @user = User.find(session[:id])
       @tweet = Tweet.create(content: params[:content])
       @user.tweets << @tweet
-    else 
+    else
       flash[:message] = "All fields are required!!!"
       redirect to '/tweets/new'
     end

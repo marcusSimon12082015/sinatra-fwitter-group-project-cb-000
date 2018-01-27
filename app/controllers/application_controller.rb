@@ -30,6 +30,10 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  get '/tweets/new' do
+
+  end
+
   get '/signup' do
     if Helpers.is_logged_in?(session)
       redirect to '/tweets'

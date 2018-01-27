@@ -45,8 +45,7 @@ class ApplicationController < Sinatra::Base
     if !Helpers.checkIfParamsEmpty?(params)
       @user = User.find(session[:id])
       @tweet = Tweet.create(content: params[:content])
-      @tweet.user_id = @user.id
-      binding.pry
+      @user.tweets << @tweet      
     end
   end
 

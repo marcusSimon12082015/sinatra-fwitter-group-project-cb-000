@@ -15,6 +15,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/tweets' do
+    binding.pry
     erb :'/tweets/tweets'
   end
 

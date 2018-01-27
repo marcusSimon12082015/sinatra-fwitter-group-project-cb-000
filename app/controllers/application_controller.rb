@@ -37,7 +37,6 @@ class ApplicationController < Sinatra::Base
       session[:id] = @user.id
       flash[:message] = "Successfully Signed Up"
       redirect to '/tweets'
-
     else
       flash[:message] = "All fields are required!!!"
       redirect to '/signup'
@@ -59,5 +58,4 @@ class ApplicationController < Sinatra::Base
       redirect to '/tweets'
     end
   end
-
 end

@@ -60,11 +60,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/logout' do
-
-  end
-
-  post '/logout' do
-
+    session.clear
   end
 
 end
